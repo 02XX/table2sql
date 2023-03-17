@@ -1,4 +1,5 @@
-使用[Textin](https://www.textin.com/)的api接口识别表格
+
+使用[Textin](https://www.textin.com/)的api接口识别表格，并输出SQL语句
 
 ## 配置
 
