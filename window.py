@@ -68,6 +68,11 @@ class Ui_table2sql(object):
 
         self.verticalLayout_2.addWidget(self.label_2)
 
+        self.lineEdit_2 = QLineEdit(table2sql)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+
+        self.verticalLayout_2.addWidget(self.lineEdit_2)
+
         self.plainTextEdit_2 = QPlainTextEdit(table2sql)
         self.plainTextEdit_2.setObjectName(u"plainTextEdit_2")
 
@@ -121,6 +126,7 @@ class Ui_table2sql(object):
         self.label_3.setText(QCoreApplication.translate("table2sql", u"\u6570\u636e", None))
         self.plainTextEdit.setPlainText("")
         self.label_2.setText(QCoreApplication.translate("table2sql", u"\u6a21\u5f0f", None))
+        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("table2sql", u"\u8f93\u5165\u6a21\u5f0f\u6bcf\u4e2a\u7528\u7a7a\u683c\u9694\u5f00\uff08\u4ec5\u652f\u6301char(len),\u548cint\uff09", None))
         self.label_4.setText(QCoreApplication.translate("table2sql", u"\u8bf7\u6ce8\u610f\uff1a\u56fe\u7247\u5c3d\u91cf\u4e0d\u5305\u542b\u8868\u9898", None))
         self.openPushButton.setText(QCoreApplication.translate("table2sql", u"open", None))
         self.postPushButton.setText(QCoreApplication.translate("table2sql", u"post", None))
