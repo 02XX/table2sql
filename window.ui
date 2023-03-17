@@ -70,6 +70,13 @@
           </widget>
          </item>
          <item>
+          <widget class="QLineEdit" name="lineEdit_2">
+           <property name="placeholderText">
+            <string>输入模式每个用空格隔开（仅支持char(len),和int）</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
          </item>
          <item>

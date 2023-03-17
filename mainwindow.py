@@ -54,7 +54,7 @@ class handleExcel(QObject):
         workbook = openpyxl.load_workbook(memory_file)
         workSheet = workbook['sheet1']
         self.column_names = [cell.value for cell in workSheet[1]]
-        data_range = range(2, workSheet.max_row+1)
+        data_range = range(2, workSheet.max_row)
         self.data_list = []
         for i in data_range:
             row_data = [str(item.value) for item in workSheet[i]]
@@ -64,16 +64,20 @@ class handleExcel(QObject):
             self.finishedSql.emit("{}长度不一致","{}长度不一致")
             return
         #创建表
-        schema = "CREATE TABLE {0}"
+        schema = "CREATE TABLE {0}("
         # schema = schema + "(" + ', '.join(self.column_names) + ");"
+        flag =False
         for name,mold in zip(self.column_names,self.molds):
-            ceil = "({0} {1}), "
+            ceil = "{0} {1}, "
+            if not flag:
+                ceil = "{0} {1} primary key, "
+                flag = True
             if 'char' in mold:
                 name = str(name)
             ceil = ceil.format(name,mold)
             schema += ceil
         schema=schema[:-2]
-        schema+=';'
+        schema+=');'
         #插入数据
         sql = "INSERT INTO {0} VALUES"
         for i in self.data_list:
